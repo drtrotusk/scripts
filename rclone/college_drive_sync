@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Backup the college folder at nine AM to drive exluding videos and with deletions
+rclone sync -v --exclude 'Videos/' /home/maxim/College/ Drive:/College/

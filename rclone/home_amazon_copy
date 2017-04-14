@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Backup the home folder hour to Amazon
+rclone copy -v --exclude 'College/' --exclude 'Backups/' --exclude '*cache*/' --exclude 'temp/' ~/ LaptopHome:

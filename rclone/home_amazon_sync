@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Backup the home folder to Amazon with deletions every third day at 10
+rclone sync -v --exclude 'College/' --exclude 'Backups/' --exclude '*cache*/' --exclude 'temp/' ~/ LaptopHome:

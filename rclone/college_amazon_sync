@@ -1,0 +1,4 @@
+#/bin/bash
+
+# Backup the college folder with deletions to Amazon every eight hours
+rclone sync -v /home/maxim/College/ College:
