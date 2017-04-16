@@ -1,4 +1,7 @@
 #!/bin/bash
 
 # Backup the college folder with deletions to Amazon every eight hours
-rclone sync -v --log-file ~/.logs/college_amazon_sync.log /home/maxim/College/ College:
+LOGFILE="$HOME/.logs/college_amazon_sync.log" 
+
+rm "$LOGFILE"
+""rclone sync -v --log-file "$LOGFILE" /home/maxim/College/ College:

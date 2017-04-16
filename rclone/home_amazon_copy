@@ -1,4 +1,7 @@
 #!/bin/bash
 
-# Backup the home folder hour to Amazon
-rclone copy -v --exclude 'College/' --exclude 'Backups/' --exclude '*cache*/' --exclude 'temp/' --log-file ~/.logs/home_amazon_copy.log ~/ LaptopHome:
+# Backup the home folder every four hours to Amazon
+LOGFILE="$HOME/.logs/home_amazon_copy.log"
+
+rm "$LOGFILE"
+rclone copy -v --exclude 'College/' --exclude 'Backups/' --exclude '*cache*/' --exclude 'temp/' --log-file "$LOGFILE" ~/ LaptopHome:

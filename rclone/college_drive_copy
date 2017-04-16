@@ -1,4 +1,7 @@
 #!/bin/bash
 
 # Backup the college folder without the videos to Drive every five minutes
-rclone copy -v --exclude 'Videos/' --log-file ~/.logs/college_drive_copy.log /home/maxim/College/ Drive:/College/
+LOGFILE="$HOME/.logs/college_drive_copy.log"
+
+rm "$LOGFILE"
+rclone copy -v --exclude 'Videos/' --log-file "$LOGFILE" /home/maxim/College/ Drive:/College/

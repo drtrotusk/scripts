@@ -1,4 +1,7 @@
 #!/bin/bash
 
 # Backup the college folder at nine AM to drive exluding videos and with deletions
-rclone sync -v --exclude 'Videos/' --log-file ~/.logs/college_drive_sync.log /home/maxim/College/ Drive:/College/
+LOGFILE="$HOME/.logs/college_drive_sync.log"
+
+rm "$LOGFILE"
+rclone sync -v --exclude 'Videos/' --log-file "$LOGFILE" /home/maxim/College/ Drive:/College/
